@@ -1,0 +1,72 @@
+:root {
+  --color1: hsla(200, 70%, 70%, 0.2);
+  --color2: hsla(200, 70%, 70%, 0.9);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: hsl(0, 0%, 95%);
+  color: hsl(0, 0%, 35%);
+}
+
+.droparea {
+  width: 100%;
+  height: 100%;
+  border: 32px solid var(--color1);
+  font-size: 5vw;
+
+  /* 上下中央 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dragover {
+  animation: dragoverAnime 0.2s ease;
+  border-color: var(--color2);
+}
+
+.dragleave {
+  animation: dragleaveAnime 0.5s ease;
+  border-color: var(--color1);
+}
+
+@keyframes dragoverAnime {
+  0%   { border-color: var(--color1); }
+  100% { border-color: var(--color2); }
+}
+
+@keyframes dragleaveAnime {
+  0%   { border-color: var(--color2); }
+  100% { border-color: var(--color1); }
+}
+
+footer {
+  background: hsla(0, 0%, 100%, 0.7);
+  font-size: 8pt;
+
+  /* 右下 */
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+a {
+  text-decoration: none;
+  color: hsl(220, 70%, 50%);
+}
+
+a:hover {
+  text-decoration: underline;
+}
